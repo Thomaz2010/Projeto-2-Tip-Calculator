@@ -1,7 +1,15 @@
 
 function formatMoney(value){
+    value = Math.ceil(value * 100) / 100
     value = value.toFixed(2) // método para formatação para 2 casas decimais
     return  '$ ' + value
+}
+
+function formatSplit(value){
+    if (value == 1)
+    return value +  ' Person' 
+    else
+    return value + ' People'
 }
 
 
@@ -24,7 +32,7 @@ function upDate() {
     document.getElementById('tipPercent').innerHTML = tipPercent + ' %'
     document.getElementById('tipValue').innerHTML =  formatMoney(tipValue)
     document.getElementById('totalWithTip').innerHTML = formatMoney(billTotal)
-    document.getElementById('splitValue').innerHTML = split
+    document.getElementById('splitValue').innerHTML =formatSplit( split )
     document.getElementById('billEach').innerHTML = formatMoney(billEach) 
 
 
